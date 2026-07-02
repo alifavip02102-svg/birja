@@ -1,0 +1,892 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="ru"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;ALIFA VIP - ТОРГОВАЯ ПЛАТФОРМА&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&amp;family=Rajdhani:wght@500;600;700&amp;family=Roboto+Mono:wght@400;500;700&amp;display=swap');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>:root {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--bg-dark: #02050e;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--bg-darker: #010308;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--panel-bg: rgba(8, 14, 29, 0.75);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--panel-bg-solid: #080e1d;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--neon-blue: #00e5ff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--neon-blue-glow: rgba(0, 229, 255, 0.3);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--neon-green: #00ffaa;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--neon-green-glow: rgba(0, 255, 170, 0.3);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--neon-pink: #ff2a6d;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--neon-pink-glow: rgba(255, 42, 109, 0.3);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--neon-purple: #b000ff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--text-main: #f1f5f9;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--text-muted: #64748b;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--border-glow: rgba(0, 229, 255, 0.12);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--glass-blur: blur(25px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>* {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Rajdhani', 'Segoe UI', sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>-webkit-user-select: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>user-select: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: var(--bg-dark);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-image:<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>radial-gradient(at 0% 0%, rgba(0, 229, 255, 0.07) 0px, transparent 50%),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>radial-gradient(at 100% 100%, rgba(255, 42, 109, 0.07) 0px, transparent 50%),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>radial-gradient(at 50% 50%, rgba(176, 0, 255, 0.03) 0px, transparent 50%),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>linear-gradient(rgba(5, 12, 28, 0.5) 1px, transparent 1px),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>linear-gradient(90deg, rgba(5, 12, 28, 0.5) 1px, transparent 1px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-size: 100% 100%, 100% 100%, 100% 100%, 30px 30px, 30px 30px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--text-main);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex-direction: column;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>perspective: 1200px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Scrollbar Customization */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar { width: 5px; height: 5px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.3); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb { background: rgba(0, 229, 255, 0.2); border-radius: 4px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb:hover { background: var(--neon-blue); box-shadow: 0 0 10px var(--neon-blue); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Header Styles */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>header {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: rgba(4, 8, 18, 0.9);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>backdrop-filter: var(--glass-blur);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px 24px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: space-between;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid rgba(0, 229, 255, 0.25);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 229, 255, 0.08);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>z-index: 500;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.logo-box { display: flex; align-items: center; gap: 12px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.logo-3d {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 900;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>letter-spacing: 3px; background: linear-gradient(135deg, #ffffff 20%, var(--neon-blue), var(--neon-pink));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text; -webkit-text-fill-color: transparent;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-shadow: 0 0 25px rgba(0, 229, 255, 0.4); animation: textGlowPulse 4s infinite ease-in-out;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.badge-pro {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Orbitron', sans-serif; background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #fff; font-size: 10px; padding: 3px 10px; border-radius: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: 800; box-shadow: 0 0 12px rgba(255, 42, 109, 0.4); letter-spacing: 1.5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: skewX(-10deg);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.header-controls { display: flex; align-items: center; gap: 16px; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.balance-container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: rgba(1, 4, 10, 0.6); border: 1px solid rgba(0, 255, 170, 0.25);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 6px 18px; border-radius: 20px; display: flex; align-items: center; gap: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: inset 0 0 12px rgba(0, 255, 170, 0.05), 0 0 15px rgba(0, 255, 170, 0.1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.balance-label { font-size: 11px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; font-weight: 600; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.balance-value { font-family: 'Roboto Mono', monospace; font-size: 18px; font-weight: 700; color: var(--neon-green); text-shadow: 0 0 10px rgba(0, 255, 170, 0.3); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-btn {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: var(--text-main); padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 700;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer; letter-spacing: 0.5px; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex; align-items: center; gap: 6px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-btn:hover { background: rgba(0, 229, 255, 0.08); border-color: var(--neon-blue); box-shadow: 0 0 12px rgba(0, 229, 255, 0.2); transform: translateY(-1px); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-btn.btn-accent { border-color: var(--neon-green); color: var(--neon-green); background: rgba(0, 255, 170, 0.02); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-btn.btn-accent:hover { background: rgba(0, 255, 170, 0.1); border-color: var(--neon-green); box-shadow: 0 0 12px rgba(0, 255, 170, 0.25); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.server-status { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--neon-green); font-weight: 600; background: rgba(0, 255, 170, 0.05); padding: 4px 10px; border-radius: 12px; border: 1px solid rgba(0, 255, 170, 0.1); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.status-dot { width: 6px; height: 6px; background-color: var(--neon-green); border-radius: 50%; box-shadow: 0 0 8px var(--neon-green); animation: statusBlink 2s infinite; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Workspace Grid Layout */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.main-workspace {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex; flex: 1; padding: 14px; gap: 14px; height: calc(100vh - 60px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-sizing: border-box; width: 100vw; overflow: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.glass-panel {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: var(--panel-bg); backdrop-filter: var(--glass-blur);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-glow); border-radius: 14px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.01);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s, border-color 0.4s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: hidden; display: flex; flex-direction: column;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.glass-panel:hover { border-color: rgba(0, 229, 255, 0.3); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 229, 255, 0.05); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Left Sidebar: Assets */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.assets-sidebar { flex: 1; min-width: 320px; max-width: 380px; transform: rotateY(3deg) translateZ(0); transform-style: preserve-3d; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.sidebar-header { padding: 14px; background: rgba(2, 5, 14, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.panel-heading { font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--neon-blue); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.category-tabs { display: flex; gap: 4px; overflow-x: auto; padding-bottom: 2px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.category-tabs::-webkit-scrollbar { height: 2px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tab-btn { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); color: var(--text-muted); padding: 5px 10px; border-radius: 14px; font-size: 11px; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.2s; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tab-btn:hover { color: #fff; background: rgba(0, 229, 255, 0.08); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tab-btn.active { color: var(--bg-dark); background: var(--neon-blue); border-color: var(--neon-blue); font-weight: 700; box-shadow: 0 0 8px var(--neon-blue-glow); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.search-box { margin-top: 8px; position: relative; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.search-input { width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 6px 10px; color: #fff; font-size: 12px; outline: none; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.search-input:focus { border-color: var(--neon-blue); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.assets-list { flex: 1; overflow-y: auto; padding: 8px; display: flex; flex-direction: column; gap: 6px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.asset-item { background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.03); padding: 10px 14px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.asset-item:hover { background: rgba(0, 229, 255, 0.04); border-color: rgba(0, 229, 255, 0.15); transform: translateX(3px); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.asset-item.active { background: linear-gradient(90deg, rgba(0, 229, 255, 0.12), transparent); border-left: 3px solid var(--neon-blue); border-color: rgba(0, 229, 255, 0.15); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.asset-title { font-weight: 700; font-size: 13.5px; letter-spacing: 0.5px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.asset-cat { font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-top: 2px; display: block; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.asset-price-val { font-family: 'Roboto Mono', monospace; font-size: 12.5px; font-weight: 700; text-align: right; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.asset-payout-badge { font-size: 10px; color: var(--neon-green); font-weight: 700; text-align: right; margin-top: 2px; block-size: auto; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Center Content Area */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.center-workspace { flex: 2.5; display: flex; flex-direction: column; gap: 14px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.chart-panel { flex: 2.2; display: flex; flex-direction: column; transform: rotateX(1.5deg); transform-style: preserve-3d; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.chart-control-bar { padding: 12px 20px; background: rgba(2, 5, 14, 0.3); border-bottom: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; align-items: center; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.current-asset-title { font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 0.5px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.live-holo-price { font-family: 'Roboto Mono', monospace; font-size: 24px; font-weight: 700; padding: 2px 8px; border-radius: 4px; transition: color 0.1s; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.price-glow-up { color: var(--neon-green); text-shadow: 0 0 12px var(--neon-green-glow); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.price-glow-down { color: var(--neon-pink); text-shadow: 0 0 12px var(--neon-pink-glow); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.chart-wrapper { flex: 1; padding: 12px; position: relative; width: 100%; height: 100%; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Bottom History Panel */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.ledger-panel { flex: 1; display: flex; flex-direction: column; min-height: 160px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.ledger-header { padding: 10px 16px; background: rgba(0, 0, 0, 0.2); border-bottom: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; align-items: center; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.ledger-table-box { flex: 1; overflow-y: auto; position: relative; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.ledger-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12.5px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.ledger-table th { padding: 8px 16px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 10px; background: rgba(1, 4, 11, 0.4); position: sticky; top: 0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.ledger-table td { padding: 10px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.02); font-weight: 600; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.row-call { color: var(--neon-green); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.row-put { color: var(--neon-pink); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Right Sidebar: Trading Terminal */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.trading-terminal { flex: 0.9; min-width: 290px; max-width: 350px; transform: rotateY(-3deg) translateZ(0); transform-style: preserve-3d; padding: 18px; display: flex; flex-direction: column; gap: 16px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.terminal-section { display: flex; flex-direction: column; gap: 6px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.terminal-label { font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; display: flex; justify-content: space-between; letter-spacing: 0.5px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.input-3d-wrapper {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative; background: rgba(1, 4, 10, 0.5); border: 1px solid rgba(0, 229, 255, 0.15);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 8px; padding: 2px; display: flex; align-items: center; box-shadow: inset 0 2px 8px rgba(0,0,0,0.6);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.input-3d-wrapper:focus-within { border-color: var(--neon-blue); box-shadow: 0 0 12px rgba(0, 229, 255, 0.15), inset 0 2px 8px rgba(0,0,0,0.6); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.input-3d-wrapper input { width: 100%; background: transparent; border: none; outline: none; color: #fff; font-family: 'Roboto Mono', monospace; font-size: 18px; font-weight: 700; padding: 8px; text-align: center; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.quick-amounts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.quick-btn { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-main); padding: 6px 2px; border-radius: 5px; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.15s; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.quick-btn:hover { background: rgba(0, 229, 255, 0.08); border-color: var(--neon-blue); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* AI Indicator Neural Engine */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.ai-recommendation-box { background: linear-gradient(135deg, rgba(0, 229, 255, 0.04), rgba(176, 0, 255, 0.04)); border: 1px solid rgba(0, 229, 255, 0.12); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.ai-header-info { display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; font-family: 'Orbitron', sans-serif; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.ai-meter-bg { height: 5px; background: rgba(0,0,0,0.4); border-radius: 3px; overflow: hidden; position: relative; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.ai-meter-fill { height: 100%; width: 50%; background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green)); box-shadow: 0 0 8px var(--neon-blue); transition: width 0.5s ease; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Big Control Buttons */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.trade-btn { padding: 15px; border: none; border-radius: 10px; font-family: 'Orbitron', sans-serif; font-size: 15px; font-weight: 900; color: #fff; cursor: pointer; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); position: relative; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.btn-call { background: linear-gradient(135deg, #00bfa5, #00796b); box-shadow: 0 4px 0 #004d40, 0 8px 20px rgba(0, 191, 165, 0.2); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.btn-call:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #004d40, 0 12px 25px rgba(0, 191, 165, 0.35); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.btn-call:active { transform: translateY(2px); box-shadow: 0 0px 0 #004d40; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.btn-put { background: linear-gradient(135deg, #ff2a6d, #c2185b); box-shadow: 0 4px 0 #880e4f, 0 8px 20px rgba(255, 42, 109, 0.2); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.btn-put:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #880e4f, 0 12px 25px rgba(255, 42, 109, 0.35); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.btn-put:active { transform: translateY(2px); box-shadow: 0 0px 0 #880e4f; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Modals Overlays &amp; Containers */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-overlay {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: rgba(1, 3, 8, 0.85); backdrop-filter: blur(10px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: none; justify-content: center; align-items: center; z-index: 1000;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>opacity: 0; transition: opacity 0.3s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-overlay.active { display: flex; opacity: 1; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-content {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: var(--panel-bg-solid); border: 1px solid var(--border-glow);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 16px; width: 460px; max-width: 95%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 30px rgba(0, 229, 255, 0.15);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(-30px) scale(0.95); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex; flex-direction: column; overflow: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-overlay.active .modal-content { transform: translateY(0) scale(1); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-header {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 16px 20px; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.05);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex; justify-content: space-between; align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-title { font-family: 'Orbitron', sans-serif; font-size: 15px; color: var(--neon-blue); font-weight: 800; letter-spacing: 1px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-close { cursor: pointer; color: var(--text-muted); font-size: 18px; transition: color 0.2s; font-weight: bold; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-close:hover { color: var(--neon-pink); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-body { padding: 22px; display: flex; flex-direction: column; gap: 14px; max-height: 80vh; overflow-y: auto; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-nav-tabs { display: flex; gap: 8px; margin-bottom: 4px; background: rgba(0,0,0,0.2); padding: 4px; border-radius: 8px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-tab-item {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex: 1; padding: 8px 12px; text-align: center; background: transparent; border: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 6px; cursor: pointer; font-weight: 700; color: var(--text-muted); font-size: 12px; transition: all 0.2s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-tab-item.active { background: var(--neon-blue); color: var(--bg-dark); box-shadow: 0 0 10px var(--neon-blue-glow); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.form-group { display: flex; flex-direction: column; gap: 6px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.form-label { font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.5px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.form-input-styled { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 10px 12px; color: #fff; font-size: 13px; outline: none; transition: border-color 0.2s; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.form-input-styled:focus { border-color: var(--neon-blue); box-shadow: 0 0 8px rgba(0, 229, 255, 0.1); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-btn-submit {<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 12px; border: none; border-radius: 6px; background: linear-gradient(135deg, var(--neon-blue), #008be3);<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white; font-weight: 800; font-family: 'Orbitron', sans-serif; font-size: 13px; cursor: pointer; transition: all 0.2s; margin-top: 6px;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>letter-spacing: 1px; box-shadow: 0 4px 15px rgba(0, 229, 255, 0.15);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.modal-btn-submit:hover { box-shadow: 0 0 15px var(--neon-blue-glow); transform: translateY(-1px); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Toasts Container */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.toast-container { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 8px; z-index: 2000; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.toast-box { background: rgba(8, 15, 30, 0.95); border-left: 4px solid var(--neon-blue); box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 10px rgba(0,229,255,0.05); padding: 12px 20px; border-radius: 6px; color: #fff; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 10px; animation: toastIn 0.25s forwards; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.toast-box.success { border-left-color: var(--neon-green); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.toast-box.error { border-left-color: var(--neon-pink); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Keyframes Animations */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@keyframes toastIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@keyframes textGlowPulse { 0%, 100% { filter: drop-shadow(0 0 8px rgba(0,229,255,0.3)); } 50% { filter: drop-shadow(0 0 18px rgba(255,42,109,0.5)); } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@keyframes statusBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;header&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="logo-box"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="logo-3d"&gt;ALIFA VIP&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="badge-pro"&gt;КОМАНДА&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="header-controls"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="nav-btn btn-accent" onclick="openModal('depositModal')"&gt;💳 ПОПОЛНЕНИЕ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="nav-btn" onclick="openModal('profileModal')"&gt;👤 КАБИНЕТ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="balance-container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="balance-label"&gt;БАЛАНС&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="balance-value" id="userBalance"&gt;$10,000.00&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="server-status"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="status-dot"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span&gt;СЕРВЕР ACTIVE&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div class="main-workspace"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Левая панель: Сетка активов --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="glass-panel assets-sidebar"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="sidebar-header"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="panel-heading"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span&gt;🎛️ МАТРИЦА ИНСТРУМЕНТОВ&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="category-tabs" id="categoryTabs"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="tab-btn active" onclick="switchCategory('ALL')"&gt;ВСЕ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="tab-btn" onclick="switchCategory('INDEX')"&gt;INDEX 50&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="tab-btn" onclick="switchCategory('FOREX')"&gt;ФОРЕКС&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="tab-btn" onclick="switchCategory('CRYPTO')"&gt;КРИПТО&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="tab-btn" onclick="switchCategory('COMMODITY')"&gt;СЫРЬЕ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="search-box"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="assetSearch" class="search-input" placeholder="Поиск инструмента по тикеру..." oninput="filterAssets()"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="assets-list" id="assetsContainer"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Центральная зона: График и реестр --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="center-workspace"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="glass-panel chart-panel"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="chart-control-bar"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="current-asset-info"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="current-asset-title" id="activeAssetTitle"&gt;EUR/USD&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="live-holo-price price-glow-up" id="activeAssetPrice"&gt;1.08520&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div style="font-size: 11px; color: var(--text-muted); font-weight: 700; letter-spacing: 0.5px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>ТЕКУЩИЙ ТФ: 1S &lt;span style="color:var(--neon-blue); margin-left:10px;"&gt;DATA STREAM: RUNNING&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="chart-wrapper"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;canvas id="mainCryptoChart"&gt;&lt;/canvas&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="glass-panel ledger-panel"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="ledger-header"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="panel-heading" style="margin:0;"&gt;📜 СТАТУС ОТКРЫТЫХ И ЗАКРЫТЫХ СДЕЛАК&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div style="font-size: 11px; color: var(--neon-blue); font-weight: 700;" id="statsDealsCount"&gt;ОБРАБОТКА: 0 | СИСТЕМА: 0&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="ledger-table-box"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;table class="ledger-table"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th&gt;UUID Контракта&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th&gt;Инструмент&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th&gt;Вектор&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th&gt;Инвестиция&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th&gt;Вход&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th&gt;Текущая/Выход&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th&gt;Экспирация&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;th&gt;Прибыль/Убыток&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;tbody id="dealsTableBody"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tr&gt;&lt;td colspan="8" style="text-align:center; padding:30px; color: var(--text-muted);"&gt;Активные рыночные контракты отсутствуют&lt;/td&gt;&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Правая панель: Панель Управления --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="glass-panel trading-terminal"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="panel-heading"&gt;⚡ ИСПОЛНИТЕЛЬНЫЙ ТЕРМИНАЛ&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="terminal-section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="terminal-label"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span&gt;Объем ордера ($)&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span style="color: var(--neon-green);" id="payoutPercentText"&gt;ВЫПЛАТА: +92%&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="input-3d-wrapper"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="number" id="tradeAmount" value="100" min="1" max="100000"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="quick-amounts"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="quick-btn" onclick="adjustAmount(20)"&gt;+20&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="quick-btn" onclick="adjustAmount(100)"&gt;+100&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="quick-btn" onclick="adjustAmount(500)"&gt;+500&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="quick-btn" onclick="multiplyAmount(2)"&gt;X2&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="terminal-section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="terminal-label"&gt;Срочность контракта (Тайм-аут)&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="input-3d-wrapper"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;input type="text" id="expirationTime" value="15 СЕКУНД" readonly style="color: var(--neon-blue); font-size:15px; letter-spacing: 1px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="ai-recommendation-box"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="ai-header-info"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span style="color: var(--neon-blue);"&gt;🤖 AI НЕЙРО-АНАЛИЗАТОР&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span id="aiConfidenceText" style="color: var(--neon-green);"&gt;ВЕРОЯТНОСТЬ: --%&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="ai-meter-bg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="ai-meter-fill" id="aiMeterFill" style="width: 50%;"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div style="font-size: 11px; color: var(--text-main); text-align: center; font-weight:500; min-height: 32px; display:flex; align-items:center; justify-content:center;" id="aiRecommendationPhrase"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>Сбор рыночных фракталов для вычисления вектора...</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="action-buttons-box" style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="trade-btn btn-call" onclick="executeTrade('CALL')"&gt;ПОВЫШЕНИЕ (CALL) ▲&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="trade-btn btn-put" onclick="executeTrade('PUT')"&gt;ПОНИЖЕНИЕ (PUT) ▼&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;!-- МОДАЛЬНОЕ ОКНО: Кабинет Пользователя --&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="modal-overlay" id="profileModal"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="modal-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-header"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="modal-title"&gt;🔐 СИСТЕМА УПРАВЛЕНИЯ АККАУНТОМ&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="modal-close" onclick="closeModal('profileModal')"&gt;✕&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-nav-tabs"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="modal-tab-item active" onclick="switchModalTab(this, 'profile-auth')"&gt;АВТОРИЗАЦИЯ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="modal-tab-item" onclick="switchModalTab(this, 'profile-security')"&gt;БЕЗОПАСНОСТЬ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="modal-tab-item" onclick="switchModalTab(this, 'profile-kyc')"&gt;ВЕРИФИКАЦИЯ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-body" id="profileModalBody"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;!-- Вкладка Авторизации по умолчанию --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="modal-sub-page" id="sub-page-profile-auth"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div style="display:flex; flex-direction:column; gap:12px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;label class="form-label"&gt;Логин или Email&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;input type="email" class="form-input-styled" placeholder="UID / email@domain.com" value="alifa_vip_trader@gmail.com"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;label class="form-label"&gt;Криптографический пароль&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;input type="password" class="form-input-styled" placeholder="••••••••••••" value="password12345"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button class="modal-btn-submit" onclick="closeModal('profileModal'); showToast('Авторизация подтверждена. Сессия активна.', 'success')"&gt;СИНХРОНИЗИРОВАТЬ ПРОФИЛЬ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;!-- МОДАЛЬНОЕ ОКНО: Шлюз Пополнения --&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="modal-overlay" id="depositModal"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="modal-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-header"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="modal-title"&gt;💳 КРИПТОГРАФИЧЕСКИЙ ДЕПОЗИТНЫЙ ШЛЮЗ&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="modal-close" onclick="closeModal('depositModal')"&gt;✕&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-nav-tabs"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="modal-tab-item active" onclick="switchModalTab(this, 'dep-crypto')"&gt;КРИПТОВАЛЮТЫ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="modal-tab-item" onclick="switchModalTab(this, 'dep-fiat')"&gt;ПЛАТЕЖНЫЕ КАРТЫ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="modal-tab-item" onclick="switchModalTab(this, 'dep-history')"&gt;ИСТОРИЯ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="modal-body" id="depositModalBody"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="modal-sub-page" id="sub-page-dep-crypto"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div style="display:flex; flex-direction:column; gap:12px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;label class="form-label"&gt;Сумма зачисления ($)&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;input type="number" id="depositSumInput" class="form-input-styled" value="500" min="10"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;label class="form-label"&gt;Выбор Протокола / Актива&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;select class="form-input-styled" style="appearance: none;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;option value="trc20"&gt;USDT (Tether OMNI/TRC-20 TRON)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;option value="erc20"&gt;USDT (Tether ERC-20 Ethereum)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;option value="btc"&gt;Bitcoin (BTC Core Native)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;option value="ton"&gt;Toncoin (TON Network)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div style="background: rgba(0,0,0,0.3); border:1px solid rgba(0,229,255,0.1); padding: 12px; border-radius:8px; font-size:12px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span style="color:var(--neon-blue); font-weight:700;"&gt;Внимание:&lt;/span&gt; Переводите средства исключительно на сгенерированный адрес сети. Ошибочные транзакции не подлежат возврату.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button class="modal-btn-submit" onclick="executeMockDeposit()"&gt;СФОРМИРОВАТЬ АДРЕС ОПЛАТЫ&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div class="toast-container" id="toastContainer"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// ИСХОДНАЯ КРАЙНЕ РАЗВЕРНУТАЯ СТРУКТУРА ВСЕХ АКТИВОВ С ИНДЕКСОМ 50 И ДРУГИМИ</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const assetsData = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// КАТЕГОРИЯ: INDEX 50</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"INDEX 50 N1": { category: "INDEX", basePrice: 4521.40, digits: 2, volatility: 2.10, payout: 0.94 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"INDEX 50 N2": { category: "INDEX", basePrice: 1284.10, digits: 2, volatility: 0.95, payout: 0.92 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"INDEX 50 N3": { category: "INDEX", basePrice: 8945.60, digits: 2, volatility: 4.80, payout: 0.91 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"INDEX 50 N4": { category: "INDEX", basePrice: 2314.25, digits: 2, volatility: 1.30, payout: 0.93 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"INDEX 50 N5": { category: "INDEX", basePrice: 6102.80, digits: 2, volatility: 3.15, payout: 0.92 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"INDEX 50 N6": { category: "INDEX", basePrice: 3415.90, digits: 2, volatility: 1.80, payout: 0.90 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"INDEX 50 N7": { category: "INDEX", basePrice: 7532.40, digits: 2, volatility: 4.20, payout: 0.94 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"INDEX 50 N8": { category: "INDEX", basePrice: 1985.15, digits: 2, volatility: 0.90, payout: 0.89 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// КАТЕГОРИЯ: FOREX</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"EUR/USD": { category: "FOREX", basePrice: 1.08520, digits: 5, volatility: 0.00014, payout: 0.92 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"GBP/USD": { category: "FOREX", basePrice: 1.27410, digits: 5, volatility: 0.00018, payout: 0.89 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"USD/JPY": { category: "FOREX", basePrice: 156.420, digits: 3, volatility: 0.025, payout: 0.91 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"AUD/USD": { category: "FOREX", basePrice: 0.66540, digits: 5, volatility: 0.00012, payout: 0.88 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"USD/CAD": { category: "FOREX", basePrice: 1.36850, digits: 5, volatility: 0.00015, payout: 0.87 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"EUR/GBP": { category: "FOREX", basePrice: 0.85160, digits: 5, volatility: 0.00009, payout: 0.90 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"GBP/JPY": { category: "FOREX", basePrice: 199.310, digits: 3, volatility: 0.045, payout: 0.92 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"EUR/JPY": { category: "FOREX", basePrice: 169.760, digits: 3, volatility: 0.035, payout: 0.88 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"NZD/USD": { category: "FOREX", basePrice: 0.61220, digits: 5, volatility: 0.00014, payout: 0.85 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"USD/CHF": { category: "FOREX", basePrice: 0.91450, digits: 5, volatility: 0.00016, payout: 0.86 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// КАТЕГОРИЯ: CRYPTO</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"BTC/USD": { category: "CRYPTO", basePrice: 67420.50, digits: 2, volatility: 22.40, payout: 0.93 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"ETH/USD": { category: "CRYPTO", basePrice: 3482.10, digits: 2, volatility: 1.95, payout: 0.90 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"SOL/USD": { category: "CRYPTO", basePrice: 148.65, digits: 2, volatility: 0.22, payout: 0.91 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"BNB/USD": { category: "CRYPTO", basePrice: 584.20, digits: 2, volatility: 0.45, payout: 0.89 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"XRP/USD": { category: "CRYPTO", basePrice: 0.4850, digits: 4, volatility: 0.0015, payout: 0.85 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"ADA/USD": { category: "CRYPTO", basePrice: 0.4215, digits: 4, volatility: 0.0012, payout: 0.86 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"DOT/USD": { category: "CRYPTO", basePrice: 6.340, digits: 3, volatility: 0.015, payout: 0.87 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"AVAX/USD": { category: "CRYPTO", basePrice: 32.75, digits: 2, volatility: 0.14, payout: 0.88 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"TON/USD": { category: "CRYPTO", basePrice: 7.425, digits: 3, volatility: 0.032, payout: 0.90 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"LINK/USD": { category: "CRYPTO", basePrice: 15.12, digits: 2, volatility: 0.08, payout: 0.85 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// КАТЕГОРИЯ: COMMODITY</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"GOLD (XAU)": { category: "COMMODITY", basePrice: 2342.60, digits: 2, volatility: 0.85, payout: 0.92 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"SILVER (XAG)": { category: "COMMODITY", basePrice: 29.450, digits: 3, volatility: 0.025, payout: 0.88 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"CRUDE OIL": { category: "COMMODITY", basePrice: 78.35, digits: 2, volatility: 0.06, payout: 0.86 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"BRENT OIL": { category: "COMMODITY", basePrice: 82.15, digits: 2, volatility: 0.07, payout: 0.85 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"NATURAL GAS": { category: "COMMODITY", basePrice: 2.680, digits: 3, volatility: 0.012, payout: 0.80 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"PLATINUM": { category: "COMMODITY", basePrice: 984.20, digits: 2, volatility: 0.55, payout: 0.84 }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Глобальные переменные состояния среды</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let currentCategory = "ALL";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let activeAsset = "EUR/USD";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let userBalance = 10000.00;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let activeDeals = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let allDealsCount = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const livePrices = {};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Заполнение текущих цен базовыми значениями</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>for (const key in assetsData) { livePrices[key] = assetsData[key].basePrice; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let tradingChart;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const ctx = document.getElementById('mainCryptoChart').getContext('2d');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const areaGradient = ctx.createLinearGradient(0, 0, 0, 400);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>areaGradient.addColorStop(0, 'rgba(0, 229, 255, 0.22)');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>areaGradient.addColorStop(1, 'rgba(0, 229, 255, 0.0)');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Инициализация графического ядра (ChartJS)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function initChart() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tradingChart = new Chart(ctx, {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>type: 'line',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>data: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>labels: [],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>datasets: [{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>data: [],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>borderColor: '#00e5ff',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>backgroundColor: areaGradient,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>borderWidth: 2.5,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>fill: true,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>tension: 0.2,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>pointRadius: 0</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>options: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>responsive: true,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>maintainAspectRatio: false,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>plugins: { legend: { display: false } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>scales: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>y: { grid: { color: 'rgba(255, 255, 255, 0.025)' }, ticks: { color: '#64748b', font: { size: 11, family: 'Roboto Mono' } } },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>x: { display: false }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>animation: { duration: 0 }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Симуляция генерации исторических данных при переключении инструмента</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function loadAssetHistory() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tradingChart.data.labels = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tradingChart.data.datasets[0].data = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let currentTempPrice = livePrices[activeAsset];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>for (let i = 45; i &gt;= 0; i--) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentTempPrice += (Math.random() - 0.5) * assetsData[activeAsset].volatility;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>tradingChart.data.labels.push("");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>tradingChart.data.datasets[0].data.push(currentTempPrice.toFixed(assetsData[activeAsset].digits));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>livePrices[activeAsset] = currentTempPrice;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tradingChart.update();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('activeAssetTitle').innerText = activeAsset;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('activeAssetPrice').innerText = currentTempPrice.toFixed(assetsData[activeAsset].digits);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('payoutPercentText').innerText = `ВЫПЛАТА: +${(assetsData[activeAsset].payout * 100).toFixed(0)}%`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Фильтрация категорий</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.switchCategory = function(cat) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>currentCategory = cat;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const tabs = document.querySelectorAll('#categoryTabs .tab-btn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tabs.forEach(btn =&gt; btn.classList.remove('active'));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>event.target.classList.add('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>renderAssetsList();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Динамический рендеринг списка инструментов с учетом фильтра и поиска</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function renderAssetsList() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const container = document.getElementById('assetsContainer');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const query = document.getElementById('assetSearch').value.toUpperCase();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>container.innerHTML = '';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>for (const [name, config] of Object.entries(assetsData)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (currentCategory !== "ALL" &amp;&amp; config.category !== currentCategory) continue;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (query &amp;&amp; !name.includes(query)) continue;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const formattedPrice = livePrices[name].toFixed(config.digits);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const activeClass = name === activeAsset ? 'active' : '';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>container.innerHTML += `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="asset-item ${activeClass}" onclick="selectAsset('${name}')"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="asset-title"&gt;${name}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="asset-cat"&gt;${config.category}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="asset-price-val" id="sidebar-price-${name.replace(/[\/\s()]/g, '_')}"&gt;${formattedPrice}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="asset-payout-badge"&gt;+${(config.payout * 100).toFixed(0)}%&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Поиск</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.filterAssets = function() { renderAssetsList(); };</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Выбор инструмента</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.selectAsset = function(name) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>activeAsset = name;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>renderAssetsList();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>loadAssetHistory();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Работа с суммами терминала</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.adjustAmount = function(val) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const i = document.getElementById('tradeAmount');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>i.value = Math.max(1, (parseFloat(i.value) || 0) + val);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.multiplyAmount = function(factor) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const i = document.getElementById('tradeAmount');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>i.value = Math.max(1, Math.round((parseFloat(i.value) || 0) * factor));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Системный поток данных цен в реальном времени (каждую секунду)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>setInterval(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>for (const [name, config] of Object.entries(assetsData)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const oldPrice = livePrices[name];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const change = (Math.random() - 0.5) * config.volatility;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const newPrice = oldPrice + change;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>livePrices[name] = newPrice;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (name === activeAsset) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>tradingChart.data.labels.push("");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>tradingChart.data.datasets[0].data.push(newPrice.toFixed(config.digits));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (tradingChart.data.labels.length &gt; 45) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>tradingChart.data.labels.shift();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>tradingChart.data.datasets[0].data.shift();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const priceEl = document.getElementById('activeAssetPrice');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>priceEl.innerText = newPrice.toFixed(config.digits);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>priceEl.className = newPrice &gt; oldPrice ? "live-holo-price price-glow-up" : "live-holo-price price-glow-down";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>tradingChart.update('none');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const cleanId = name.replace(/[\/\s()]/g, '_');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const sideEl = document.getElementById(`sidebar-price-${cleanId}`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (sideEl) sideEl.innerText = newPrice.toFixed(config.digits);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>processActiveDeals();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}, 1000);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Моделирование работы ИИ Нейро-анализатора</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>setInterval(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const confPercent = Math.floor(65 + Math.random() * 31);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const barFill = document.getElementById('aiMeterFill');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const textConf = document.getElementById('aiConfidenceText');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const phraseEl = document.getElementById('aiRecommendationPhrase');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>barFill.style.width = `${confPercent}%`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>textConf.innerText = `ВЕРОЯТНОСТЬ: ${confPercent}%`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const phrases = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"Аномальный объем покупателей. Рекомендуется контракт CALL.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"Пересечение скользящих средних векторов. Сигнал к PUT.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"Фрактальный разворот тренда подтвержден нейросетью.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"Поддержка ликвидности стабильна. Импульс высокой точности.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"Пробой локального коридора цен. Ожидается коррекция."</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>phraseEl.innerText = phrases[Math.floor(Math.random() * phrases.length)];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}, 4000);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Логика модальных окон и переключения их под-страниц</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.openModal = function(id) { document.getElementById(id).classList.add('active'); };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.closeModal = function(id) { document.getElementById(id).classList.remove('active'); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.switchModalTab = function(element, tabKey) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let siblings = element.parentElement.children;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>for (let btn of siblings) btn.classList.remove('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>element.classList.add('active');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Логика переключения внутреннего контента в зависимости от модалки</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(tabKey.startsWith('profile-')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>renderProfileSubPage(tabKey);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else if(tabKey.startsWith('dep-')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>renderDepositSubPage(tabKey);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function renderProfileSubPage(key) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const body = document.getElementById('profileModalBody');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(key === 'profile-auth') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>body.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;&lt;label class="form-label"&gt;Логин или Email&lt;/label&gt;&lt;input type="email" class="form-input-styled" value="alifa_vip_trader@gmail.com"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;&lt;label class="form-label"&gt;Криптографический пароль&lt;/label&gt;&lt;input type="password" class="form-input-styled" value="password12345"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="modal-btn-submit" onclick="closeModal('profileModal'); showToast('Авторизация подтверждена.', 'success')"&gt;СИНХРОНИЗИРОВАТЬ&lt;/button&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else if(key === 'profile-security') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>body.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;&lt;label class="form-label"&gt;Текущий пароль&lt;/label&gt;&lt;input type="password" class="form-input-styled" placeholder="••••••••"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;&lt;label class="form-label"&gt;Новый пароль&lt;/label&gt;&lt;input type="password" class="form-input-styled" placeholder="Минимум 8 знаков"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;&lt;label class="form-label"&gt;Двухфакторная аутентификация (2FA)&lt;/label&gt;&lt;input type="text" class="form-input-styled" placeholder="Ключ сопряжения Google Authenticator" readonly value="A7X9-E2W4-QP91-LLM3"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="modal-btn-submit" onclick="showToast('Настройки безопасности обновлены.', 'success')"&gt;СОХРАНИТЬ КОНФИГУРАЦИЮ&lt;/button&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else if(key === 'profile-kyc') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>body.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div style="text-align:center; padding:10px 0;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div style="font-size:14px; color:var(--neon-green); font-weight:700; margin-bottom:8px;"&gt;СТАТУС: ВЕРИФИЦИРОВАН (PRO)&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p style="font-size:12px; color:var(--text-muted);"&gt;Все лимиты на вывод средств сняты. Ваш аккаунт имеет приоритетный доступ к пулу ликвидности ALIFA VIP.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function renderDepositSubPage(key) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const body = document.getElementById('depositModalBody');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(key === 'dep-crypto') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>body.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;&lt;label class="form-label"&gt;Сумма зачисления ($)&lt;/label&gt;&lt;input type="number" id="depositSumInput" class="form-input-styled" value="500"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;&lt;label class="form-label"&gt;Выбор Протокола&lt;/label&gt;&lt;select class="form-input-styled"&gt;&lt;option&gt;USDT (Tether OMNI/TRC-20 TRON)&lt;/option&gt;&lt;option&gt;Bitcoin (BTC Core Native)&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="modal-btn-submit" onclick="executeMockDeposit()"&gt;СФОРМИРОВАТЬ АДРЕС ОПЛАТЫ&lt;/button&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else if(key === 'dep-fiat') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>body.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;&lt;label class="form-label"&gt;Номер кредитной/дебетовой карты&lt;/label&gt;&lt;input type="text" class="form-input-styled" placeholder="4276 •••• •••• 9821"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div style="display:flex; gap:10px;"&gt;&lt;div class="form-group" style="flex:1;"&gt;&lt;label class="form-label"&gt;Срок действия&lt;/label&gt;&lt;input type="text" class="form-input-styled" placeholder="MM/YY"&gt;&lt;/div&gt;&lt;div class="form-group" style="flex:1;"&gt;&lt;label class="form-label"&gt;CVC/CVV2&lt;/label&gt;&lt;input type="password" class="form-input-styled" placeholder="•••"&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="modal-btn-submit" onclick="showToast('Провайдер отклонил эквайринг. Используйте Криптовалюты.', 'error')"&gt;ИНИЦИИРОВАТЬ ПЛАТЕЖ&lt;/button&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else if(key === 'dep-history') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>body.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;table class="ledger-table" style="font-size:11px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;thead&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Метод&lt;/th&gt;&lt;th&gt;Сумма&lt;/th&gt;&lt;th&gt;Статус&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tr&gt;&lt;td&gt;#89341&lt;/td&gt;&lt;td&gt;USDT_TRC20&lt;/td&gt;&lt;td&gt;$150.00&lt;/td&gt;&lt;td style="color:var(--neon-green)"&gt;Зачислено&lt;/td&gt;&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tr&gt;&lt;td&gt;#87210&lt;/td&gt;&lt;td&gt;USDT_TRC20&lt;/td&gt;&lt;td&gt;$1000.00&lt;/td&gt;&lt;td style="color:var(--neon-green)"&gt;Зачислено&lt;/td&gt;&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/table&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Симуляция успешного пополнения через шлюз</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.executeMockDeposit = function() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const sum = parseFloat(document.getElementById('depositSumInput').value) || 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(sum &lt; 10) return showToast("Минимальная сумма депозита $10", "error");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>userBalance += sum;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('userBalance').innerText = `$${userBalance.toFixed(2)}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>closeModal('depositModal');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>showToast(`Баланс успешно пополнен на +$${sum.toFixed(2)}`, "success");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Всплывающие уведомления (Улучшенные)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function showToast(message, type = 'info') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const container = document.getElementById('toastContainer');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const toast = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>toast.className = `toast-box toast-${type}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>toast.innerText = message;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>container.appendChild(toast);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>setTimeout(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>toast.style.animation = "toastIn 0.2s linear reverse forwards";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; toast.remove(), 250);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}, 3500);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Обработчик открытия торговых сделок контрактов</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.executeTrade = function(direction) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const amount = parseFloat(document.getElementById('tradeAmount').value) || 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (amount &lt;= 0) return showToast("Некорректная сумма ордера", "error");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (amount &gt; userBalance) return showToast("Недостаточный объем свободной ликвидности на балансе.", "error");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>userBalance -= amount;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('userBalance').innerText = `$${userBalance.toFixed(2)}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>allDealsCount++;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const dealUuid = 'TX-' + Math.floor(100000 + Math.random() * 900000);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>activeDeals.push({</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>id: dealUuid,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>asset: activeAsset,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>type: direction,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>investment: amount,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>entryPrice: livePrices[activeAsset],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>timeLeft: 15,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>payoutRate: assetsData[activeAsset].payout,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>digits: assetsData[activeAsset].digits,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>status: 'PROCESSING'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>showToast(`Контракт ${dealUuid} успешно размещен на рынке.`, "success");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>updateDealsTable();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Обновление таблицы ордеров</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function updateDealsTable() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const tbody = document.getElementById('dealsTableBody');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tbody.innerHTML = '';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (activeDeals.length === 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>tbody.innerHTML = `&lt;tr&gt;&lt;td colspan="8" style="text-align:center; padding:30px; color: var(--text-muted);"&gt;Активные рыночные контракты отсутствуют&lt;/td&gt;&lt;/tr&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('statsDealsCount').innerText = `ОБРАБОТКА: 0 | СИСТЕМА: ${allDealsCount}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let processingCount = 0;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Рендерим от новых к старым</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>for(let i = activeDeals.length - 1; i &gt;= 0; i--) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const deal = activeDeals[i];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (deal.status === 'PROCESSING') processingCount++;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let statusText = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (deal.status === 'PROCESSING') statusText = '&lt;span style="color:var(--neon-blue);"&gt;В обработке&lt;/span&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>else if (deal.status === 'WIN') statusText = `&lt;span style="color:var(--neon-green);"&gt;+$${(deal.investment * (1 + deal.payoutRate)).toFixed(2)}&lt;/span&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>else statusText = `&lt;span style="color:var(--neon-pink);"&gt;-$${deal.investment.toFixed(2)}&lt;/span&gt;`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const currentOrExitPrice = deal.status === 'PROCESSING' ? livePrices[deal.asset] : deal.exitPrice;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const vectorText = deal.type === 'CALL' ? '&lt;span class="row-call"&gt;ВВЕРХ ▲&lt;/span&gt;' : '&lt;span class="row-put"&gt;ВНИЗ ▼&lt;/span&gt;';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>tbody.innerHTML += `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td style="font-family:'Roboto Mono'; font-size:11px; color:var(--text-muted);"&gt;${deal.id}&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td&gt;&lt;b&gt;${deal.asset}&lt;/b&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td&gt;${vectorText}&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td style="font-family:'Roboto Mono';"&gt;$${deal.investment.toFixed(2)}&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td style="font-family:'Roboto Mono';"&gt;${deal.entryPrice.toFixed(deal.digits)}&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td style="font-family:'Roboto Mono';"&gt;${currentOrExitPrice.toFixed(deal.digits)}&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td&gt;${deal.timeLeft &gt; 0 ? deal.timeLeft + ' сек' : 'Закрыт'}&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;td&gt;${statusText}&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('statsDealsCount').innerText = `ОБРАБОТКА: ${processingCount} | СИСТЕМА: ${allDealsCount}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Процессинг тайм-аутов активных ордеров</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function processActiveDeals() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let stateChanged = false;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>activeDeals.forEach(deal =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (deal.status === 'PROCESSING') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>deal.timeLeft--;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>stateChanged = true;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (deal.timeLeft &lt;= 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>deal.exitPrice = livePrices[deal.asset];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const isCallWin = deal.type === 'CALL' &amp;&amp; deal.exitPrice &gt; deal.entryPrice;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const isPutWin = deal.type === 'PUT' &amp;&amp; deal.exitPrice &lt; deal.entryPrice;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if (isCallWin || isPutWin) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>deal.status = 'WIN';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>userBalance += deal.investment * (1 + deal.payoutRate);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>showToast(`Контракт ${deal.id} закрыт в ПРИБЫЛЬ!`, "success");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>deal.status = 'LOSS';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>showToast(`Контракт ${deal.id} закрыт вне денег.`, "error");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>document.getElementById('userBalance').innerText = `$${userBalance.toFixed(2)}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (stateChanged) updateDealsTable();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Корректный запуск всех модулей ядра после полной загрузки DOM дерева</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.addEventListener('DOMContentLoaded', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>initChart();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>renderAssetsList();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>loadAssetHistory();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
