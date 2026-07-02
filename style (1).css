@@ -1,0 +1,232 @@
+box-sizing: border-box;
+}
+
+:root {
+    --bg-main: #0a0f1d;
+    --bg-panel: rgba(22, 30, 49, 0.75);
+    --bg-input: #111a2e;
+    --accent-blue: #00b0ff;
+    --accent-green: #00e676;
+    --accent-red: #ff5252;
+    --text-main: #ffffff;
+    --text-muted: #8a99ad;
+    --glow-blue: rgba(0, 176, 255, 0.4);
+    --glow-green: rgba(0, 230, 118, 0.4);
+    --glow-red: rgba(255, 82, 82, 0.4);
+    --shadow-3d: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at 50% 50%, #141f36 0%, #060a12 100%);
+    color: var(--text-main);
+    overflow-x: hidden;
+    perspective: 1000px;
+}
+
+header {
+    background: linear-gradient(135deg, rgba(26, 34, 51, 0.9) 0%, rgba(16, 22, 36, 0.9) 100%);
+    backdrop-filter: blur(12px);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(45, 55, 72, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--accent-blue);
+    text-shadow: 0 0 15px var(--glow-blue), 0 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+    text-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-blue);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px var(--glow-blue);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.main-container {
+    display: flex;
+    height: calc(100vh - 75px);
+    padding: 25px;
+    gap: 25px;
+}
+
+/* 3D Oval/Rounded Blocks Layout */
+.chart-section, .trading-panel {
+    background: var(--bg-panel);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 24px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-3d);
+    transform: translateZ(0);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+}
+
+.chart-section:hover, .trading-panel:hover {
+    transform: translateY(-5px) scale(1.01) rotateX(1deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+.chart-section {
+    flex: 3;
+}
+
+.chart-section h2, .trading-panel h2 {
+    margin-top: 0;
+    color: #f7fafc;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(255,255,255,0.05);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+/* Inner 3D Container */
+.chart-container {
+    flex: 1;
+    background-color: var(--bg-input);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.7), 0 1px 1px rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.trading-panel {
+    flex: 1;
+}
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Deep 3D Inputs */
+.input-group input {
+    width: 100%;
+    padding: 14px 18px;
+    background-color: var(--bg-input);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    color: var(--text-main);
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.5), 0 1px 0px rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 0 12px var(--glow-blue);
+}
+
+/* Massive 3D Buttons with tactile press effect */
+.btn {
+    border: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-buy {
+    background: linear-gradient(180deg, #00e676 0%, #00b0ff 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 20px var(--glow-blue), 0 4px 0px #0070ba, inset 0 1px 0px rgba(255,255,255,0.4);
+}
+
+.btn-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--glow-blue), 0 4px 0px #0070ba, inset 0 1px 0px rgba(255,255,255,0.4);
+    filter: brightness(1.1);
+}
+
+.btn-buy:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 5px var(--glow-blue), 0 0px 0px #0070ba;
+}
+
+.btn-sell {
+    background: linear-gradient(180deg, #ff6e40 0%, #ff5252 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 20px var(--glow-red), 0 4px 0px #b22222, inset 0 1px 0px rgba(255,255,255,0.4);
+}
+
+.btn-sell:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--glow-red), 0 4px 0px #b22222, inset 0 1px 0px rgba(255,255,255,0.4);
+    filter: brightness(1.1);
+}
+
+.btn-sell:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 5px var(--glow-red), 0 0px 0px #b22222;
+}
+
+.plus-animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
